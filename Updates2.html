@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family:'Opens Sans', sans-serif ;
+        }
+        
+               nav{
+    background-color: #1e1e1e;
+    padding: 15px;
+    }
+
+    nav ul{
+      width:100%;
+      list-style: none;
+      display:flex;
+      justify-content: flex-end;
+      align-items:center;
+    }
+
+    nav li{
+      height:50px;
+    }
+
+    nav a{
+      height:100%;
+      padding:0 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color:white;
+    }
+
+    nav a:hover{
+      background-color: #333;
+    }
+
+    nav li:first-child{
+      margin-right: auto;
+    }
+    
+   .sidebar{
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width:250px;
+    z-index:999;
+    background-color: #13131388;
+    display:none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    backdrop-filter: blur(10px);
+    }
+    
+    .sidebar li{
+      width:100%;
+    }
+
+    .sidebar a{
+      width:100%;
+    }
+
+    .menu-button{
+      display: none;
+    }
+        
+@media(max-width:768px){
+  .container{
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .hero-text{
+    padding:40px 0px ;
+  }
+   .hideOnMobile{
+        display:none;
+      } 
+  .menu-button{
+    display: block;
+  }
+  .sidebar{
+    width:100%;
+  }
+}
+
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .container {
+  /* width: 80%;
+    margin: auto;
+    overflow: hidden; */
+   
+}
+
+           .service {
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.3);
+  }
+  .icon {
+    font-size: 2.5rem;
+    background: #fff;
+    color: #764ba2;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .details {
+    flex: none;
+  }       
+            .details h2 {
+    margin: 0 0 8px 0;
+    font-weight:600;
+    font-size: 1.5rem;
+    color:#f57c00;
+  }
+  .details p {
+    margin: 0 0 20px 0;
+    font-size: 1rem;
+    color: #fff;
+  }
+  .btn-more {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px #f57c00;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-more:hover,
+  .btn-more:focus {
+    background-color: #f57c00;
+    box-shadow: 0 8px 18px #f57c00;
+    outline: none;
+  }
+  @medi (max-width: 480px) {
+
+  }
+          .welcome-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-container h1 {
+            color: #f57c00;
+            margin-bottom: 20px;
+        }
+
+        .welcome-container p {
+            color: #1e1e1e;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .welcome-container a:hover {
+            background-color: #0056b3;
+        }
+        .updates {
+  padding: 60px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.section-title {
+  color: #00a859;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.update-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.update-card img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.update-card:hover img {
+  transform: scale(1.05);
+}
+.update-card h3 {
+  color: #f57c00;
+  margin: 15px;
+}
+.update-card p {
+  color: #333;
+  margin: 0 15px 15px;
+}
+.read-more {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #00a859, #f57c00);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.read-more:hover {
+  background: linear-gradient(45deg, #f57c00, #00a859);
+}
+.update-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+      .content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            color: #f57c00;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ddd;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+           <ul >
+            <li>  <a src="images/log.png" class="logo"><img src="images/log.png" width="40px" heighta="40px"><img/>
+        &nbsp;<h3>Teams Launchpad Gataragwa</h3></a></li>
+            <li class="hideOnMobile"><a href="index.html">Home</a></li>
+            <li class="hideOnMobile"><a href="About.html">About</a></li>
+            <li class="hideOnMobile"><a href="Services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="Gallery.html">Gallery</a></li>
+            <li class="hideOnMobile"><a href="Updates2.html">Updates</a></li>
+            <li class="hideOnMobile"><a href="Downloads.html">Download</a></li>
+            <li class="hideOnMobile"><a href="Contactus.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3E3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+       <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3E3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+             <li><a href="Gallery.html">Gallery</a></li>
+              <li><a href="Services.html">Updates</a></li>
+             <li><a href="Gallery.html">Download</a></li>
+            <li><a href="Contactus.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+         <div class="welcome-container">
+         <section class="updates">
+  <h2 class="section-title">Latest Updates</h2>
+  <div class="updates-grid">
+    <div class="update-card">
+      <img src="images/2.jpg" alt="Update Image">
+      <h3>Team Building Workshop</h3>
+      <p>Our latest workshop brought together creativity and collaboration.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+    <div class="update-card">
+      <img src="images/pic12.jpg" alt="Update Image">
+      <h3>Advertising Campaign Launch</h3>
+      <p>We unveiled a new campaign highlighting teamwork and innovation.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+    <!-- Add more cards -->
+  </div>
+</section>
+
+  </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We are a company dedicated to providing the best services to our customers.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contactus.html">Contact</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: teamslaunchpad@gmail.com</p>
+                <p>Phone: +254 734 169 507</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Your Company. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+           function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('responsive');
+}
+// Fade-in animation on scroll
+const cards = document.querySelectorAll('.update-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => {
+  observer.observe(card);
+});
+    </script>
+</body>
+</html>
